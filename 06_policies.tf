@@ -30,5 +30,5 @@ data "aws_iam_policy_document" "access_bucket_artefacts_for_maven" {
 
 resource "aws_iam_policy" "access_bucket_artefacts_for_maven" {
   name   = "AccessBucketArtefactsForMaven"
-  policy = "${data.aws_iam_policy_document.access_bucket_artefacts_for_maven.json}"
+  policy = data.aws_iam_policy_document.access_bucket_artefacts_for_maven.json
 }
