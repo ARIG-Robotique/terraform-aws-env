@@ -34,6 +34,17 @@ data "aws_iam_policy_document" "access_bucket_artefacts_for_software" {
     effect = "Allow"
 
     actions = [
+      "s3:ListAllMyBuckets",
+    ]
+
+    resources = ["*"]
+  }
+
+  statement {
+    sid    = 2
+    effect = "Allow"
+
+    actions = [
       "s3:GetBucketLocation",
       "s3:ListBucket",
     ]
@@ -44,7 +55,7 @@ data "aws_iam_policy_document" "access_bucket_artefacts_for_software" {
   }
 
   statement {
-    sid    = 2
+    sid    = 3
     effect = "Allow"
 
     actions = [
