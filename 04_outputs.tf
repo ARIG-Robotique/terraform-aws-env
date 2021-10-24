@@ -16,6 +16,19 @@ EOF
   }
 }
 
+output "gregory_access" {
+  description = <<EOF
+Identifiant de connexion du compte de Gregory.<br>
+Le mot de passe chiffré est récupérable avec la clé PGP de @gdepuille :<br>
+`terraform output -json gregory_access | jq -r '.value.encrypted_password' | base64 --decode | keybase pgp decrypt`
+EOF
+
+  value = {
+    login              = aws_iam_user.gregory.name
+    encrypted_password = aws_iam_user_login_profile.gregory.encrypted_password
+  }
+}
+
 output "damien_access" {
   description = <<EOF
 Identifiant de connexion du compte de Damien.<br>

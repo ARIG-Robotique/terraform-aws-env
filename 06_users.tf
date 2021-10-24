@@ -20,6 +20,26 @@ resource "aws_iam_user_group_membership" "maven_user" {
 # Compte humain #
 #################
 
+// Greg
+resource "aws_iam_user" "gregory" {
+  name          = "gregory"
+  force_destroy = true
+}
+
+resource "aws_iam_user_group_membership" "gregory" {
+  user = aws_iam_user.gregory.name
+
+  groups = [
+    aws_iam_group.artefacts.name,
+    aws_iam_group.software.name
+  ]
+}
+
+resource "aws_iam_user_login_profile" "gregory" {
+  user    = aws_iam_user.gregory.name
+  pgp_key = local.iam_pgp_key
+}
+
 // Damien
 resource "aws_iam_user" "damien" {
   name          = "damien"
