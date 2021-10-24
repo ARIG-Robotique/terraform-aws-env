@@ -7,7 +7,7 @@ output "maven_access" {
   description = <<EOF
 Identifiant de connexion du compte d'upload Maven.<br>
 Le mot de passe chiffré est récupérable avec la clé PGP de @gdepuille :<br>
-`terraform output -json maven_access | jq -r '.value.encrypted_password' | base64 --decode | keybase pgp decrypt`
+`terraform output -json maven_access | jq -r '.encrypted_password' | base64 --decode | keybase pgp decrypt`
 EOF
 
   value = {
@@ -20,7 +20,7 @@ output "gregory_access" {
   description = <<EOF
 Identifiant de connexion du compte de Gregory.<br>
 Le mot de passe chiffré est récupérable avec la clé PGP de @gdepuille :<br>
-`terraform output -json gregory_access | jq -r '.value.encrypted_password' | base64 --decode | keybase pgp decrypt`
+`terraform output -json gregory_access | jq -r '.encrypted_password' | base64 --decode | keybase pgp decrypt`
 EOF
 
   value = {
@@ -33,7 +33,7 @@ output "damien_access" {
   description = <<EOF
 Identifiant de connexion du compte de Damien.<br>
 Le mot de passe chiffré est récupérable avec la clé PGP de @gdepuille :<br>
-`terraform output -json damien_access | jq -r '.value.encrypted_password' | base64 --decode | keybase pgp decrypt`
+`terraform output -json damien_access | jq -r '.encrypted_password' | base64 --decode | keybase pgp decrypt`
 EOF
 
   value = {
@@ -46,7 +46,7 @@ output "guillaume_access" {
   description = <<EOF
 Identifiant de connexion du compte de Guillaume.<br>
 Le mot de passe chiffré est récupérable avec la clé PGP de @gdepuille :<br>
-`terraform output -json guillaume_access | jq -r '.value.encrypted_password' | base64 --decode | keybase pgp decrypt`
+`terraform output -json guillaume_access | jq -r '.encrypted_password' | base64 --decode | keybase pgp decrypt`
 EOF
 
   value = {
@@ -59,7 +59,7 @@ output "thomas_access" {
   description = <<EOF
 Identifiant de connexion du compte de Thomas.<br>
 Le mot de passe chiffré est récupérable avec la clé PGP de @gdepuille :<br>
-`terraform output -json thomas_access | jq -r '.value.encrypted_password' | base64 --decode | keybase pgp decrypt`
+`terraform output -json thomas_access | jq -r '.encrypted_password' | base64 --decode | keybase pgp decrypt`
 EOF
 
   value = {
